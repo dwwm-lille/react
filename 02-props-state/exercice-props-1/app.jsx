@@ -1,4 +1,3 @@
-// EXO 1 PROPS
 class Instruction extends React.Component {
     render() {
         return (

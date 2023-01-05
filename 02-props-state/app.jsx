@@ -64,6 +64,13 @@ class App extends React.Component {
                 <a href="exercice-props-1">Exercice props 1</a> <br />
                 <a href="exercice-props-2">Exercice props 2</a> <br />
                 <a href="exercice-props-3">Exercice props 3</a> <br />
+                <a href="exercice-props-4">Exercice props 4</a> <br />
+                <a href="exercice-props-5">Exercice props 5</a>
+
+                <h2>Exercices state</h2>
+                <a href="exercice-state-1">Exercice state 1</a> <br />
+                <a href="exercice-state-2">Exercice state 2</a> <br />
+                <a href="exercice-state-3">Exercice state 3</a>
             </div>
         );
     }
