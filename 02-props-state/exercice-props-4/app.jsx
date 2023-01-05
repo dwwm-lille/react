@@ -28,11 +28,18 @@ class Instruction extends React.Component {
     }
 }
 
+class FormHeader extends React.Component {
+    render() {
+        return <h2>{this.props.title}</h2>
+    }
+}
+
 class Form extends React.Component {
     render() {
         return (
             <div>
-                {/* Remplir ici */}
+                <FormHeader title="Mon formulaire" />
+                <PrimaryButton text="Valider" />
             </div>
         )
     }
@@ -50,6 +57,8 @@ class App extends React.Component {
     render() {
         return (
             <div>
+                <Form />
+                <Profile />
                 <Instruction />
             </div>
         );

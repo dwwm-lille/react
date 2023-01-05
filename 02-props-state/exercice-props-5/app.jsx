@@ -29,10 +29,37 @@ class TitleComponent extends React.Component {
     }
 }
 
+class Card extends React.Component {
+    render() {
+        return (
+            <div className="card" style={{ borderColor: this.props.color }}>
+                {this.props.children}
+            </div>
+        )
+    }
+}
+
+class Footer extends React.Component {
+    render() {
+        return (
+            <footer>
+                <p>Un texte</p>
+                {this.props.children}
+            </footer>
+        )
+    }
+}
+
 class App extends React.Component {
     render() {
         return (
             <div>
+                <Card color="red">
+                    <h2>Ma carte</h2>
+                    <p>Un texte</p>
+                    <button>Envoyer</button>
+                </Card>
+                <Card>Salut</Card>
                 <TitleComponent>
                     Je suis un children de titleComponent
                 </TitleComponent>
@@ -41,6 +68,13 @@ class App extends React.Component {
                     <span>De Title Component</span>
                 </TitleComponent>
                 <Instruction />
+                <Footer>
+                    <p>Copyright 2023</p>
+                    <ul>
+                        <li>A</li>
+                        <li>B</li>
+                    </ul>
+                </Footer>
             </div>
         )
     }
