@@ -70,7 +70,8 @@ class App extends React.Component {
                 <h2>Exercices state</h2>
                 <a href="exercice-state-1">Exercice state 1</a> <br />
                 <a href="exercice-state-2">Exercice state 2</a> <br />
-                <a href="exercice-state-3">Exercice state 3</a>
+                <a href="exercice-state-3">Exercice state 3</a> <br />
+                <a href="exercice-state-challenge">Exercice state challenge</a>
             </div>
         );
     }

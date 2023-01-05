@@ -8,6 +8,8 @@ class App extends React.Component {
 
         // Indispensable pour pouvoir manipuler le state depuis incrementCounter
         this.incrementCounter = this.incrementCounter.bind(this);
+        this.decrementCounter = this.decrementCounter.bind(this);
+        this.replaceByBaba = this.replaceByBaba.bind(this);
     }
 
     render() {
@@ -25,12 +27,14 @@ class App extends React.Component {
                     <p>Remplir la fonction decrementCounter</p>
                     <p>Lier la fonction decrementCounter dans le constructor comme pour incrementCounter</p>
                     <p>Créer un nouveau bouton "Retirer -1" qui va déclencher une fonction decrementCounter</p>
+                    <button onClick={this.decrementCounter}>Retirer - 1</button>
                 </div>
                 <div>
                     <p>Remplir la fonction replaceByBaba</p>
                     <p>Lier la fonction replaceByBaba dans le constructor</p>
                     <p>Créer un nouveau bouton Remplacer qui va déclencher une fonction replaceByBaba</p>
                     <h2>{this.state.text}</h2>
+                    <button onDoubleClick={this.replaceByBaba}>Double Clic !</button>
                 </div>
             </div>
         )
@@ -49,12 +53,14 @@ class App extends React.Component {
      * Décrémente la valeur du compteur du state
      */
     decrementCounter() {
+        this.setState({ counter: --this.state.counter });
     }
 
     /**
      * Remplace la valeur de text par "Baba"
      */
     replaceByBaba() {
+        this.setState({ text: 'Baba' });
     }
 }
 
