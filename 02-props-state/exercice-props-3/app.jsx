@@ -37,6 +37,8 @@ class VegetablesCart extends React.Component {
             <div>
                 <h2>Les légumes</h2>
                 <ul>
+                    {/* La prop vegetables est un tableau qu'on parcourt et pour chaque item à l'intérieur, on affiche un composant Vegetable
+                        avec une prop vegetable qui correspond à l'item. */}
                     {this.props.vegetables.map((vegetable, index) => <Vegetable key={index} vegetable={vegetable} />)}
                 </ul>
             </div>
@@ -44,7 +46,29 @@ class VegetablesCart extends React.Component {
     }
 }
 
-// @todo Students pour les explications
+class Student extends React.Component {
+    render() {
+        return (
+            <div>
+                <h2>{this.props.student.name}</h2>
+                <p>{this.props.student.age}</p>
+            </div>
+        )
+    }
+}
+
+class Students extends React.Component {
+    render() {
+        return (
+            <div className="flex">
+                {/* Pour debug, on a le JSON.stringify... */}
+                {/* JSON.stringify(this.props.list) */}
+                {this.props.list.map((item, index) => <Student key={index} student={item} />)}
+            </div>
+        )
+    }
+}
+
 class App extends React.Component {
     render() {
         const vegetables = listVegetables();
@@ -55,6 +79,7 @@ class App extends React.Component {
                 <TitleComponent />
                 <Instruction />
                 <VegetablesCart vegetables={vegetables} />
+                <Students list={students} />
             </div>
         );
     }

@@ -37,7 +37,7 @@ class Button extends React.Component {
 class Image extends React.Component {
     render() {
         return (
-            <img src={this.props.source} width={this.props.width} />
+            <img src={this.props.source} width={this.props.width} className="image" />
         )
     }
 }
