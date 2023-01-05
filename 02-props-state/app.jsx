@@ -59,6 +59,11 @@ class App extends React.Component {
 
                 <AnimalList animals={['Chat', 'Chien', 'Oiseau']} title="Animaux de compagnie" />
                 <AnimalList animals={['Lion', 'Cheval']} />
+
+                <h2>Exercices props</h2>
+                <a href="exercice-props-1">Exercice props 1</a> <br />
+                <a href="exercice-props-2">Exercice props 2</a> <br />
+                <a href="exercice-props-3">Exercice props 3</a> <br />
             </div>
         );
     }
