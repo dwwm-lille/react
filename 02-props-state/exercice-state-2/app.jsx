@@ -44,6 +44,7 @@ class App extends React.Component {
      * Incrémente la valeur du compteur du state
      */
     incrementCounter() {
+        // Le setState change les valeurs des states (autrement dit, met à jour le DOM / HTML)
         this.setState({
             counter: this.state.counter + 1,
         })

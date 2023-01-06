@@ -1,4 +1,7 @@
 class App extends React.Component {
+    /**
+     * Permet d'initialiser le composant
+     */
     constructor(props) {
         super(props);
         this.state = {
@@ -12,6 +15,9 @@ class App extends React.Component {
         }
     }
 
+    /**
+     * Affiche le code HTML du composant
+     */
     render() {
         return (
             <div>
