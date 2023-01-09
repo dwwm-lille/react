@@ -25,6 +25,8 @@ class App extends React.Component {
                     price: 1,
                 }
             ],
+            newVegetableName: '',
+            newVegetablePrice: '',
         };
     }
 
@@ -49,6 +51,42 @@ class App extends React.Component {
         this.setState({ vegetables });
     }
 
+    deleteVegetable(index) {
+        let vegetables = this.state.vegetables;
+
+        vegetables.splice(index, 1); // On supprime l'élément qui a l'index donné
+        this.setState({ vegetables });
+
+        // On ne garde que les végétaux dont l'index est différent de l'index passé en paramètre
+        // this.setState({ vegetables: vegetables.filter((vegetable, i) => index != i) })
+    }
+
+    handleVegetableName(event) {
+        this.setState({ newVegetableName: event.target.value });
+    }
+
+    handleVegetablePrice(event) {
+        this.setState({ newVegetablePrice: event.target.value });
+    }
+
+    handleVegetable(field, event) {
+        // [field] va se transformer en newVegetablePrice donc ce sera ça la clé
+        this.setState({ [field]: event.target.value });
+    }
+
+    addVegetable(event) {
+        event.preventDefault(); // Annuler l'envoi du formulaire
+
+        let vegetables = this.state.vegetables;
+        let vegetable = { name: this.state.newVegetableName, price: this.state.newVegetablePrice, draftName: '' };
+
+        vegetables.push(vegetable);
+        this.setState({ vegetables });
+
+        // Méthode avancée avec le spread
+        // this.setState({ vegetables: [...vegetables, vegetable] });
+    }
+
     render() {
         return (
             <div>
@@ -68,6 +106,7 @@ class App extends React.Component {
                             <span>{vegetable.name} à {vegetable.price}€</span>
                             <input type="text" value={vegetable.draftName} onChange={(e) => this.updateVegetableDraftName(index, e)} />
                             <button onClick={() => this.changeVegetableName(index, vegetable.draftName)}>Modifier</button>
+                            <button onClick={() => this.deleteVegetable(index)}>Supprimer</button>
                         </li>
                     )}
                 </ul>
@@ -83,6 +122,13 @@ class App extends React.Component {
                     <li>Chaque input doit être lié au state correspondant. L'input pour le nom du légume doit être lié à newVegetableName et l'input pour le type à newVegetablePrice</li>
                     <li>Créer un bouton qui déclenche la fonction addVegetable</li>
                 </ul>
+
+                <form>
+                    <input type="text" value={this.state.newVegetableName} onChange={(e) => this.handleVegetable('newVegetableName', e)} />
+                    <input type="text" value={this.state.newVegetablePrice} onChange={(e) => this.handleVegetable('newVegetablePrice', e)} />
+
+                    <button onClick={(e) => this.addVegetable(e)}>Ajouter</button>
+                </form>
             </div>
         )
     }
