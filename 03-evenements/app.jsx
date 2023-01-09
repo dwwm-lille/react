@@ -90,6 +90,13 @@ class App extends React.Component {
                 <Greeting lang="Hello" />
 
                 <Students />
+
+                <a href="exercice-event-1">Exercice Event 1</a> <br />
+                <a href="exercice-event-2">Exercice Event 2</a> <br />
+                <a href="exercice-event-3">Exercice Event 3</a> <br />
+                <a href="exercice-event-4">Exercice Event 4</a> <br />
+                <a href="exercice-event-5">Exercice Event 5</a> <br />
+                <a href="exercice-event-challenge">Exercice Event Challenge</a>
             </div>
         )
     }
