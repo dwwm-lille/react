@@ -62,7 +62,12 @@ class App extends React.Component {
         return (
             <div>
                 {this.state.display && <Clock />}
-                <button onClick={() => this.toggleDisplay()}>Afficher / Cacher</button>
+                <button onClick={() => this.toggleDisplay()}>Afficher / Cacher</button> <br />
+
+                <a href="exercice-lifecycle-1">Exercice Cycle de vie 1</a> <br />
+                <a href="exercice-lifecycle-2">Exercice Cycle de vie 2</a> <br />
+                <a href="exercice-lifecycle-3">Exercice Cycle de vie 3</a> <br />
+                <a href="exercice-lifecycle-challenge">Exercice Cycle de vie challenge</a>
             </div>
         );
     }
