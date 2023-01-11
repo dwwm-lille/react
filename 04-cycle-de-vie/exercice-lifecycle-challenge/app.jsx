@@ -22,6 +22,18 @@ class App extends React.Component {
      * PreviousProps n'est pas utilisé dans cet exercice
      */
     componentDidUpdate(previousProps, previousState) {
+        console.log(this.state.factsOnCats);
+        if (this.state.factsOnCats.length == 0) {
+            this.fetchFacts();
+        }
+    }
+
+    handleDelete(index) {
+        let factsOnCats = this.state.factsOnCats;
+
+        factsOnCats.splice(index, 1);
+
+        this.setState({ factsOnCats });
     }
 
     render() {
@@ -29,7 +41,14 @@ class App extends React.Component {
             <div>
                 <h1>Fetch their soul !</h1>
                 <Instructions />
-                {console.log(this.state.factsOnCats)}
+                <ul>
+                    {this.state.factsOnCats.map((fact, index) =>
+                        <li key={index}>
+                            {fact.text}
+                            <button onClick={() => this.handleDelete(index)}>Supprimer</button>
+                        </li>
+                    )}
+                </ul>
             </div>
         )
     }
