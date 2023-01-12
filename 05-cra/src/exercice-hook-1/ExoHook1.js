@@ -1,3 +1,7 @@
+import Button from './Button';
+import SecondButton from '../components/Button';
+import Header from './Header';
+
 function Footer(props) {
     return (
         <div style={{ border: 'solid', padding: '8px', margin: '8px 0' }}>
@@ -22,9 +26,12 @@ function ExoHook1() {
                 <p>
                     Créer un composant fonctionnel Header qui renvoie un h1 avec le texte "Baba".
                 </p>
+                <Header />
                 <p>
                     Créer un composant fonctionnel Button qui renvoie un button avec un texte reçu en props.
                 </p>
+                <Button className="btn" text="Mon bouton" />
+                <SecondButton>Toto</SecondButton>
             </div>
         </div>
     )

@@ -37,14 +37,14 @@ function ExoHook3() {
                 <p>Incorrect : </p>
                 <pre>
                     const updatedNotes = notes;
-                    /* Manipulation des notes */
+                    Manipulation des notes
                     this.setNotes(updatedNotes);
                 </pre>
 
                 <p>Correct</p>
                 <pre>
                     const updatedNotes = [...notes];
-                    /* Manipulation des notes */
+                    Manipulation des notes
                     this.setNotes(updatedNotes);
                 </pre>
 
@@ -52,7 +52,7 @@ function ExoHook3() {
                 <p>Correct : </p>
                 <pre>
                     const updatedUser = {'{...User}'};
-                    /* Manipulation de updatedUser */
+                    Manipulation de updatedUser
                     this.setUser(updatedUser);
                 </pre>
             </div>
