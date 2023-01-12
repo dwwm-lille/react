@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import AgeField from './AgeField';
+import MailField from './MailField';
 
 /**
  * Dispose d'un state isErrorMessageDisplayed mis à jour avec setErrorMessageDisplayState
@@ -46,26 +48,7 @@ function PseudoField() {
     );
 }
 
-/**
- * Dispose d'un state mail mis à jour avec setMail
- * mail est une chaîne de caractères
- *
- * Dispose d'un state permettant de gérer l'affichage ou non du message d'erreur "Le mail n'a pas un format valide"
- *
- * Affiche un formulaire permettant de mettre le mail à jour.
- * Affiche une erreur si le mail n'a pas de format mail
- */
-function MailField() {
-}
-
-/**
- * State : age, mis à jour avec setAge
- * Affiche l'âge et un formulaire permettant de changer l'âge
- * Si l'âge est supérieur à 18, afficher "Wow, interdit aux mineurs ici !".
- */
-function AgeField() {
-}
-
+// @todo A corriger
 function ExoHook4() {
     return (
         <div>
@@ -78,8 +61,10 @@ function ExoHook4() {
             </div>
             <div>
                 <p>En vous inspirant du dernier exemple, remplir le composant MailField</p>
+                <MailField />
                 <a href="https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript">Vérifier si un email est au bon format</a>
                 <p>En vous inspirant du dernier exemple, Remplir le composant AgeField</p>
+                <AgeField />
             </div>
         </div>
     )
