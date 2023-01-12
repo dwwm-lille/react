@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Ajax from './components/Ajax';
 import Button from './components/Button';
 import Clock from './components/Clock';
 import CounterA from './components/CounterA';
@@ -27,10 +28,14 @@ function App() {
       <Button>Valider</Button>
       <button onClick={() => toggleShow()}>{show ? 'TRUE' : 'FALSE'}</button>
 
+      <h2>Exercices Hooks</h2>
       <ExoHook1 />
       <ExoHook2 />
       <ExoHook3 />
       <ExoHook4 />
+
+      <h2>AJAX</h2>
+      <Ajax />
     </div>
   );
 }
