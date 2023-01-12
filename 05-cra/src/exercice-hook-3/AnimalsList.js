@@ -23,8 +23,10 @@ function AnimalsList() {
     }
 
     let handleDelete = (index) => {
-        animals.splice(index, 1);
-        setAnimals([ ...animals ]);
+        // animals.splice(index, 1);
+        // setAnimals([ ...animals ]);
+
+        setAnimals(animals.filter((value, i) => i != index));
     }
 
     return (
