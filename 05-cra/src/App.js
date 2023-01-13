@@ -9,6 +9,7 @@ import ExoHook1 from './exercice-hook-1/ExoHook1';
 import ExoHook2 from './exercice-hook-2/ExoHook2';
 import ExoHook3 from './exercice-hook-3/ExoHook3';
 import ExoHook4 from './exercice-hook-4/ExoHook4';
+import ExoRevision from './exercice-revision/ExoRevision';
 import { useBoolean } from './hooks';
 import logo from './logo.svg';
 
@@ -36,6 +37,9 @@ function App() {
 
       <h2>AJAX</h2>
       <Ajax />
+
+      <h2>Revision</h2>
+      <ExoRevision />
     </div>
   );
 }
