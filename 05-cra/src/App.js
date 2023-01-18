@@ -5,6 +5,7 @@ import Button from './components/Button';
 import Clock from './components/Clock';
 import CounterA from './components/CounterA';
 import CounterB from './components/CounterB';
+import ExoAjax1 from './exercice-ajax-1/ExoAjax1';
 import ExoHook1 from './exercice-hook-1/ExoHook1';
 import ExoHook2 from './exercice-hook-2/ExoHook2';
 import ExoHook3 from './exercice-hook-3/ExoHook3';
@@ -37,6 +38,7 @@ function App() {
 
       <h2>AJAX</h2>
       <Ajax />
+      <ExoAjax1 />
 
       <h2>Revision</h2>
       <ExoRevision />
