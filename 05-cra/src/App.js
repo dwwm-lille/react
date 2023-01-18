@@ -7,6 +7,8 @@ import CounterA from './components/CounterA';
 import CounterB from './components/CounterB';
 import ExoAjax1 from './exercice-ajax-1/ExoAjax1';
 import ExoAjax2 from './exercice-ajax-2/ExoAjax2';
+import ExoAjax3 from './exercice-ajax-3/ExoAjax3';
+import ExoAjaxChallenge from './exercice-ajax-challenge/ExoAjaxChallenge';
 import ExoHook1 from './exercice-hook-1/ExoHook1';
 import ExoHook2 from './exercice-hook-2/ExoHook2';
 import ExoHook3 from './exercice-hook-3/ExoHook3';
@@ -41,6 +43,8 @@ function App() {
       <Ajax />
       <ExoAjax1 />
       <ExoAjax2 />
+      <ExoAjax3 />
+      <ExoAjaxChallenge />
 
       <h2>Revision</h2>
       <ExoRevision />
