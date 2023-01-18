@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-function useBoolean() {
-    let [show, setShow] = useState(false);
+function useBoolean(value = false) {
+    let [show, setShow] = useState(value);
     let toggleShow = () => setShow(!show);
 
     return [show, toggleShow];
