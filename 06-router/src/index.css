@@ -50,3 +50,28 @@
     background-color: transparent;
     text-decoration: none;
 }
+
+.flex {
+    display: flex;
+}
+
+.user-list {
+    flex-wrap: wrap;
+    column-gap: 40px;
+}
+
+.user-list article {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.user-list article img {
+    justify-self: start;
+}
+
+.user-list h5 {
+    margin-bottom: 0;
+}
