@@ -6,6 +6,7 @@ import App from './App';
 import About from './Pages/About';
 import Home from './Pages/Home';
 import Hello from './Pages/Hello';
+import User from './Pages/User';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
         <Route index element={<Home />} />
         <Route path="/a-propos" element={<About />} />
         <Route path="/bonjour/:name" element={<Hello />} />
+        <Route path="/utilisateur/:id" element={<User />} />
       </Route>
     </Routes>
   </BrowserRouter>

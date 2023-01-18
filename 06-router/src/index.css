@@ -69,9 +69,18 @@
 }
 
 .user-list article img {
-    justify-self: start;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 .user-list h5 {
     margin-bottom: 0;
+}
+
+.user-single {
+    justify-content: space-evenly;
+}
+
+.user-single img {
+    margin-top: 40px;
 }

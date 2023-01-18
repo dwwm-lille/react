@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Home() {
     let [users, setUsers] = useState([]);
@@ -20,6 +21,9 @@ function Home() {
                     <article key={user.login.uuid}>
                         <img src={user.picture.large} alt="" />
                         <h5>{user.name.first} {user.name.last}</h5>
+                        <Link to={`/utilisateur/${user.login.username}`}>
+                            <button type="button">Voir</button>
+                        </Link>
                     </article>
                 )}
             </div>
