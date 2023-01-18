@@ -1,14 +1,10 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <div className="container">
-      <h1>React Router</h1>
-
-      <ul>
-        <li><Link to="/">Accueil</Link></li>
-        <li><Link to="/a-propos">A propos</Link></li>
-      </ul>
+      <Navbar title="React Router" />
 
       <Outlet />
     </div>
