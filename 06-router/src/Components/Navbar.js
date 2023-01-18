@@ -8,6 +8,7 @@ function Navbar({ title }) {
             <ul className="menu">
                 <li><Link to="/">Accueil</Link></li>
                 <li><Link to="/a-propos">A propos</Link></li>
+                <li><Link to="/bonjour/fiorella">Fiorella</Link></li>
             </ul>
         </div>
     );
