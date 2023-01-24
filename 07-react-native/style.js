@@ -20,6 +20,10 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 25,
   },
+  square: {
+    width: 100,
+    height: 100,
+  },
 });
 
 export default styles;
