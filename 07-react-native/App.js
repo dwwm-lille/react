@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Exercice1 from './screens/Exercice1';
+import Exercice2 from './screens/Exercice2';
 import Home from './screens/Home';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import styles from './style';
@@ -24,6 +25,10 @@ export default function App() {
             iconName = 'planet';
           }
 
+          if (route.name === 'Exercice 2') {
+            iconName = 'american-football';
+          }
+
           // Si l'icône actuelle est sélectionnée, on ne mets pas le outline
           iconName += focused ? '' : '-outline';
 
@@ -37,6 +42,7 @@ export default function App() {
             return <Ionicons name={iconName} size={size} color={color} />
           }
         }} />
+        <Tab.Screen name="Exercice 2" component={Exercice2} />
       </Tab.Navigator>
     </NavigationContainer>
   );
