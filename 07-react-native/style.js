@@ -24,6 +24,16 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
+  header: {
+    backgroundColor: 'red',
+  },
+  headerTitle: {
+    color: 'blue',
+    marginLeft: 25
+  },
+  tab: {
+    backgroundColor: 'lightgrey',
+  },
 });
 
 export default styles;
