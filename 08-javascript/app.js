@@ -8,3 +8,25 @@ const filterArray = (array) => array
 
 document.querySelector('.exo1 p:first-child span').innerHTML = students;
 document.querySelector('.exo1 p:last-child span').innerHTML = filterArray(students);
+
+// Exercice 2
+const runClock = document.querySelector('.run-clock');
+const clock = document.querySelector('.clock');
+
+let interval;
+
+runClock.addEventListener('click', () => {
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+        let date = new Date();
+
+        if (date.getSeconds() % 10 === 0) {
+            clock.classList.add('bold');
+        } else if (clock.classList.contains('bold')) {
+            clock.classList.remove('bold');
+        }
+
+        clock.innerHTML = date.toLocaleTimeString();
+    }, 1000);
+});
