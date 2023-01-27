@@ -61,3 +61,21 @@ image.addEventListener('change', () => {
 });
 
 button.addEventListener('click', () => alert(tweet.value));
+
+// Exercice 4
+const message = document.querySelector('.message');
+const encode = document.querySelector('.encode');
+const decode = document.querySelector('.decode');
+const result = document.querySelector('.result');
+
+encode.addEventListener('click', () => {
+    let encode = [...message.value].map(letter => letter.charCodeAt()).join('.');
+
+    result.innerHTML = encode;
+});
+
+decode.addEventListener('click', () => {
+    let decode = String.fromCharCode(...message.value.split('.'));
+
+    result.innerHTML = decode;
+});
