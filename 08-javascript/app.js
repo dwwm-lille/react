@@ -2,9 +2,20 @@
 
 // Exercice 1
 const students = ['Fiorella', 'Marina', 'Toto', 'Alphonse Brown'];
+
+// Version ES5
+function filterArray2(array) {
+    return array.filter(function (item) {
+        return item.toLowerCase().includes('a');
+    }).map(function (item) {
+        return item.toUpperCase();
+    });
+}
+
+// Version ES6
 const filterArray = (array) => array
-    .filter(s => s.toLowerCase().includes('a'))
-    .map(s => s.toUpperCase());
+    .filter((item) => item.toLowerCase().includes('a'))
+    .map((item) => item.toUpperCase());
 
 document.querySelector('.exo1 p:first-child span').innerHTML = students;
 document.querySelector('.exo1 p:last-child span').innerHTML = filterArray(students);
@@ -32,17 +43,22 @@ runClock.addEventListener('click', () => {
 });
 
 // Exercice 3
-const keepLetters = document.querySelector('.keep-letters');
+const entryLetters = document.querySelector('.entry-letters');
 const tweet = document.querySelector('.tweet');
-const pLimit = keepLetters.parentElement;
+const pLimit = entryLetters.parentElement; // Le p qui contient le span
 const button = pLimit.nextElementSibling;
 const image = document.querySelector('#image');
+const label = image.previousElementSibling; // Le label avant l'image
 let limit = 0;
 
 const checkLimit = () => {
     limit = tweet.value.length + (image.checked ? 5 : 0);
-    keepLetters.textContent = limit;
+    entryLetters.textContent = limit;
 
+    // Changer le label de la photo
+    label.innerHTML = (image.checked) ? '✓ Photo ajoutée': 'Pas de photo';
+
+    // Désactiver le bouton et ajouter la classe
     if (limit > 10) {
         pLimit.classList.add('bold');
         button.disabled = true;
@@ -52,14 +68,8 @@ const checkLimit = () => {
     }
 }
 
-tweet.addEventListener('input', () => {
-    checkLimit();
-});
-
-image.addEventListener('change', () => {
-    checkLimit();
-});
-
+tweet.addEventListener('input', () => checkLimit());
+image.addEventListener('change', () => checkLimit());
 button.addEventListener('click', () => alert(tweet.value));
 
 // Exercice 4
