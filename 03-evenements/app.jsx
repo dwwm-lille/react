@@ -45,7 +45,7 @@ class Greeting extends React.Component {
 class Students extends React.Component {
     constructor(props) {
         super(props);
-    
+
         this.state = {
             students: [
                 'Mélanie', 'Robin', 'Jeremy', 'Anthony',
