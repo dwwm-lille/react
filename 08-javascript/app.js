@@ -79,13 +79,28 @@ const decode = document.querySelector('.decode');
 const result = document.querySelector('.result');
 
 encode.addEventListener('click', () => {
-    let encode = [...message.value].map(letter => letter.charCodeAt()).join('.');
+    // Version ES6
+    // let encode = [...message.value].map(letter => letter.charCodeAt()).join('.');
+
+    let encode = '';
+
+    for (let letter of message.value) {
+        encode += letter.charCodeAt()+'.';
+    }
 
     result.innerHTML = encode;
 });
 
 decode.addEventListener('click', () => {
-    let decode = String.fromCharCode(...message.value.split('.'));
+    // Version ES6
+    // let decode = String.fromCharCode(...message.value.split('.'));
+
+    let decode = '';
+
+    // .split() transforme la chaine en tableau
+    for (let number of message.value.split('.')) {
+        decode += String.fromCharCode(number);
+    }
 
     result.innerHTML = decode;
 });
