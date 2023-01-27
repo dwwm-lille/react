@@ -30,3 +30,34 @@ runClock.addEventListener('click', () => {
         clock.innerHTML = date.toLocaleTimeString();
     }, 1000);
 });
+
+// Exercice 3
+const keepLetters = document.querySelector('.keep-letters');
+const tweet = document.querySelector('.tweet');
+const pLimit = keepLetters.parentElement;
+const button = pLimit.nextElementSibling;
+const image = document.querySelector('#image');
+let limit = 0;
+
+const checkLimit = () => {
+    limit = tweet.value.length + (image.checked ? 5 : 0);
+    keepLetters.textContent = limit;
+
+    if (limit > 10) {
+        pLimit.classList.add('bold');
+        button.disabled = true;
+    } else if (pLimit.classList.contains('bold')) {
+        pLimit.classList.remove('bold');
+        button.disabled = false;
+    }
+}
+
+tweet.addEventListener('input', () => {
+    checkLimit();
+});
+
+image.addEventListener('change', () => {
+    checkLimit();
+});
+
+button.addEventListener('click', () => alert(tweet.value));
