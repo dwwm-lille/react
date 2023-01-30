@@ -1,4 +1,4 @@
-import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useCallback, useState } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import axios from 'axios';
@@ -7,6 +7,7 @@ export default function Pokemons({ navigation }) {
     let [pokemons, setPokemons] = useState([]);
     let [loading, setLoading] = useState(false);
     let [generation, setGeneration] = useState(1);
+    let [search, setSearch] = useState('');
 
     useFocusEffect(useCallback(() => {
         axios.get('https://pokebuildapi.fr/api/v1/pokemon/limit/151').then(response => {
@@ -28,9 +29,11 @@ export default function Pokemons({ navigation }) {
 
     const Header = () => {
         return (
-            loading && <Text style={{ fontSize: 24 }}>
-                Chargement génération {generation}...
-            </Text>
+            <View>
+                {loading && <Text style={{ fontSize: 24 }}>
+                    Chargement génération {generation}...
+                </Text>}
+            </View>
         );
     }
 
@@ -44,13 +47,26 @@ export default function Pokemons({ navigation }) {
         });
     }
 
+    let filteredPokemons = pokemons.filter(pokemon => pokemon.name.includes(search));
+
     return (
-        <FlatList
-            data={pokemons}
-            renderItem={ItemView}
-            ListHeaderComponent={Header}
-            onRefresh={() => fetchPokemons()}
-            refreshing={loading}
-        />
+        <View style={{ marginBottom: 110 }}>
+            <TextInput style={{
+                height: 50, fontSize: 22, backgroundColor: '#fff',
+                marginHorizontal: 30, marginVertical: 30, padding: 10
+            }} placeholder="Chercher un pokémon..."
+               defaultValue={search}
+               onChangeText={(value) => setSearch(value)}
+               onSubmitEditing={(event) => setSearch(event.nativeEvent.text)}
+            />
+
+            <FlatList
+                data={filteredPokemons}
+                renderItem={ItemView}
+                ListHeaderComponent={Header}
+                onRefresh={() => fetchPokemons()}
+                refreshing={loading}
+            />
+        </View>
     )
 }

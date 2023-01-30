@@ -33,7 +33,9 @@ export default function PokemonCard({ navigation, route }) {
             </View>
 
             {/* Evolutions du pokémon */}
-            
+            <View>
+                
+            </View>
         </View>
     );
 }
