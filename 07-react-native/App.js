@@ -7,6 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import styles from './style';
 import Item from './screens/Item';
 import List from './screens/List';
+import Pokemons from './screens/Pokemons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Tab = createBottomTabNavigator();
@@ -47,6 +48,7 @@ const TabScreen = () => {
       }} />
       <Tab.Screen name="Exercice 2" component={Exercice2} />
       <Tab.Screen name="Liste" component={List} />
+      <Tab.Screen name="Pokémons" component={Pokemons} />
     </Tab.Navigator>
   )
 }
