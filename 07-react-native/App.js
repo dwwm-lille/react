@@ -9,6 +9,7 @@ import Item from './screens/Item';
 import List from './screens/List';
 import Pokemons from './screens/Pokemons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import PokemonCard from './screens/PokemonCard';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -59,6 +60,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="TabScreen" component={TabScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Item" component={Item} />
+        <Stack.Screen name="Pokemon" component={PokemonCard} />
       </Stack.Navigator>
     </NavigationContainer>
   );

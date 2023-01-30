@@ -1,9 +1,9 @@
-import { FlatList, Image, Text, View } from 'react-native';
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import { useCallback, useState } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import axios from 'axios';
 
-export default function Pokemons() {
+export default function Pokemons({ navigation }) {
     let [pokemons, setPokemons] = useState([]);
     let [loading, setLoading] = useState(false);
     let [generation, setGeneration] = useState(1);
@@ -17,10 +17,12 @@ export default function Pokemons() {
 
     const ItemView = ({ item }) => {
         return (
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                <Image source={{ uri: item.image }} style={{ width: 100, height: 100 }} />
-                <Text style={{ fontSize: 30 }}>{item.name}</Text>
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Pokemon', { pokemon: item })}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
+                    <Image source={{ uri: item.image }} style={{ width: 100, height: 100 }} />
+                    <Text style={{ fontSize: 30 }}>{item.name}</Text>
+                </View>
+            </TouchableOpacity>
         );
     }
 
