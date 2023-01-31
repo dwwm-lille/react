@@ -11,3 +11,17 @@
 #image {
     margin-left: 10px;
 }
+
+.cookie-box {
+    justify-content: center;
+}
+
+.cookie {
+    font-size: 150px;
+    user-select: none;
+}
+
+.count {
+    font-size: 64px;
+    margin-left: 20px;
+}

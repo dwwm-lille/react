@@ -104,3 +104,105 @@ decode.addEventListener('click', () => {
 
     result.innerHTML = decode;
 });
+
+// Exercice 6
+const cookie = document.querySelector('.cookie');
+const countElement = document.querySelector('.count');
+const cookiesByClicksElement = document.querySelector('.cookies-by-clicks');
+const cookiesBySecondsElement = document.querySelector('.cookies-by-seconds');
+
+let count = 2000;
+let cookiesByClicks = 1; // Le gain par clics
+let cookiesBySeconds = 0; // Le gain par secondes
+let price1 = 25;
+let price2 = 250;
+let price3 = 50;
+let price4 = 300;
+
+// Déclenche le setInterval
+countElement.innerHTML = count;
+setInterval(() => {
+    count += cookiesBySeconds;
+    countElement.innerHTML = count;
+}, 1000);
+
+const buyOneClick = (event) => {
+    if (count < price1) {
+        alert('Pas assez de cookies');
+        return;
+    }
+
+    // Augmente le nombre de clic
+    cookiesByClicks += 1;
+    cookiesByClicksElement.innerHTML = cookiesByClicks;
+
+    // Réduit le nombre de cookies
+    count -= price1;
+    countElement.innerHTML = count;
+
+    // On met à jour le span.price
+    price1 = Math.floor(price1 * 2.5);
+    event.target.children[0].innerHTML = price1;
+};
+
+const buyClicks = (value, event) => {
+    if (count < price2) {
+        alert('Pas assez de cookies');
+        return;
+    }
+
+    // Augmente le nombre de clic
+    cookiesByClicks += value;
+    cookiesByClicksElement.innerHTML = cookiesByClicks;
+
+    // Réduit le nombre de cookies
+    count -= price2;
+    countElement.innerHTML = count;
+
+    // On met à jour le span.price
+    price2 = Math.floor(price2 * 2.5);
+    event.target.children[0].innerHTML = price2;
+};
+
+const buyOneSecond = (event) => {
+    if (count < price3) {
+        alert('Pas assez de cookies');
+        return;
+    }
+
+    // Augmente le nombre de cookie par secondes
+    cookiesBySeconds += 1;
+    cookiesBySecondsElement.innerHTML = cookiesBySeconds;
+
+    // Réduit le nombre de cookies
+    count -= price3;
+    countElement.innerHTML = count;
+
+    // On met à jour le span.price
+    price3 = Math.floor(price3 * 1.7);
+    event.target.children[0].innerHTML = price3;
+};
+
+const buySeconds = (value, event) => {
+    if (count < price4) {
+        alert('Pas assez de cookies');
+        return;
+    }
+
+    // Augmente le nombre de cookie par secondes
+    cookiesBySeconds += 1;
+    cookiesBySecondsElement.innerHTML = cookiesBySeconds;
+
+    // Réduit le nombre de cookies
+    count -= price4;
+    countElement.innerHTML = count;
+
+    // On met à jour le span.price
+    price4 = Math.floor(price4 * 1.5);
+    event.target.children[0].innerHTML = price4;
+};
+
+cookie.addEventListener('click', () => {
+    count += cookiesByClicks;
+    countElement.innerHTML = count;
+});
